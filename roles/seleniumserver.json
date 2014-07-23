@@ -1,0 +1,31 @@
+{
+   "name":"seleniumserver",
+   "chef_type":"role",
+   "json_class":"Chef::Role",
+   "override_attributes":{
+      "java":{
+         "jdk_version":"7"
+      },
+      "jenkins":{
+         "master":{
+	   "install_method":"package"
+         }
+      }
+   },
+   "run_list":[
+      "yumfastestmirror",
+      "yum-repoforge",
+      "timezone",
+      "locale",
+      "package",
+      "git",
+      "java",
+      "jenkins::master",
+      "seleniumserver",
+      /*
+       *
+       */
+      "empty"
+   ]
+}
+
